@@ -8,7 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MapComponent } from './map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ApicallService } from './apicall.service';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
   ],
   imports: [
     BrowserModule,
-	BrowserAnimationsModule,
-    LeafletModule.forRoot()
+    BrowserAnimationsModule,
+    LeafletModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApicallService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
